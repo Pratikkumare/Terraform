@@ -1,24 +1,52 @@
 # terraformcode
 
-terraform 
+Terraform AWS Setup Guide
 
-AWS configure first in your local machine.
+Prerequisites
+- Install Terraform: https://developer.hashicorp.com/terraform/downloads
+- Configure AWS CLI with your credentials:
 
+aws configure
+
+Enter:
+- AWS Access Key
+- AWS Secret Access Key
+- Default region (e.g., ap-south-1)
+- Output format (e.g., json)
+
+Common Terraform Commands
+
+Initialize Terraform
 terraform init
+Initializes the working directory and downloads required provider plugins.
 
-terraform validate --> to check the syntax of terraform is valid or not
+Validate Syntax
+terraform validate
+Checks whether the Terraform configuration is syntactically valid.
 
-terraform plam
+Preview the Plan
+terraform plan
+Shows the changes that will be applied without actually making them.
 
+Apply Configuration
 terraform apply
 
+Creates or updates the infrastructure as per the configuration.
+Destroy Infrastructure
 terraform destroy
 
+Removes all resources created by Terraform.
+Refresh State
 terraform refresh
 
-{ terraform workspace ---> prod/dev/qa we use 
+Updates the Terraform state file with the real infrastructure state.
+Using Workspaces
+Workspaces allow you to manage multiple environments (e.g., dev, qa, prod).
+List all workspaces
+terraform workspace list
+Create a new workspace
+terraform workspace new pratik
 
---> terraform workspace new Pratik
---> terraform workspace select Pratik
-
-}
+Switch to an existing workspace
+terraform workspace select pratik
+✅ Always run 'terraform plan' before 'terraform apply' to verify the changes.
